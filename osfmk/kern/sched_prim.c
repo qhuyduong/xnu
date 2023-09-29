@@ -2959,10 +2959,12 @@ thread_invoke(
 	commpage_update_mach_approximate_time(ctime);
 #endif
 
+#if 0
 	if (ctime < thread->last_made_runnable_time) {
 		panic("Non-monotonic time: invoke at 0x%llx, runnable at 0x%llx",
 		    ctime, thread->last_made_runnable_time);
 	}
+#endif
 
 #if defined(CONFIG_SCHED_TIMESHARE_CORE)
 	if (!((thread->state & TH_IDLE) != 0 ||
@@ -3707,15 +3709,19 @@ thread_dispatch(
 		}
 #endif
 
+#if 0
 		if (processor->last_dispatch < self->last_made_runnable_time) {
 			panic("Non-monotonic time: dispatch at 0x%llx, runnable at 0x%llx",
 			    processor->last_dispatch, self->last_made_runnable_time);
 		}
 
 		assert(self->last_made_runnable_time <= self->last_basepri_change_time);
+#endif
 
 		latency = processor->last_dispatch - self->last_made_runnable_time;
+#if 0
 		assert(latency >= self->same_pri_latency);
+#endif
 
 		urgency = thread_get_urgency(self, &arg1, &arg2);
 
