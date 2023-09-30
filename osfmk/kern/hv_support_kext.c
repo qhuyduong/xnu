@@ -37,6 +37,8 @@
 
 #if defined(__x86_64__) && CONFIG_VMX
 #include <i386/vmx/vmx_cpu.h>
+#elif defined(__x86_64__) && CONFIG_SVM
+#include <i386/svm/svm_cpu.h>
 #endif
 
 #include <kern/hv_support.h>
@@ -79,6 +81,8 @@ hv_support_init(void)
 {
 #if defined(__x86_64__) && CONFIG_VMX
 	hv_support_available = vmx_hv_support();
+#elif defined(__x86_64__) && CONFIG_SVM
+	hv_support_available = svm_hv_support();
 #endif
 }
 

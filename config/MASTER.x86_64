@@ -53,7 +53,7 @@
 #  PERF_DBG_DEV    =[ PERF_DBG_BASE lock_stats config_iotrace ]
 #  PERF_DBG_DEBUG = [ PERF_DBG_BASE lock_stats config_iotrace ]
 #  PARAVIRT_BASE =  [ config_pv_ticket ]
-#  MACH_BASE =      [ mach config_kext_basement config_mca config_vmx config_mtrr config_lapic config_telemetry importance_inheritance config_atm config_coalitions hypervisor config_iosched config_sysdiagnose config_mach_bridge_send_time copyout_shim phys_write_acct config_user_notification config_service_port_info config_voucher_deprecated PARAVIRT_BASE config_ledger_interval_max ]
+#  MACH_BASE =      [ mach config_kext_basement config_mca config_svm config_mtrr config_lapic config_telemetry importance_inheritance config_atm config_coalitions hypervisor config_iosched config_sysdiagnose config_mach_bridge_send_time copyout_shim phys_write_acct config_user_notification config_service_port_info config_voucher_deprecated PARAVIRT_BASE config_ledger_interval_max ]
 #  MACH_RELEASE =   [ MACH_BASE ]
 #  MACH_DEV =       [ MACH_BASE importance_trace ]
 #  MACH_DEBUG =     [ MACH_BASE importance_trace importance_debug ]
@@ -83,6 +83,7 @@ options		PAL_I386
 
 options	    CONFIG_MCA			    # Machine Check Architecture	# <config_mca>
 options	    CONFIG_VMX			    # Virtual Machine Extensions	# <config_vmx>
+options	    CONFIG_SVM			    # Secure Virtual Machine		# <config_svm>
 options	    CONFIG_MTRR			    # Memory Type Range Registers	# <config_mtrr>
 options     CONFIG_MACF_LAZY_VNODE_LABELS   # Turn on labels, don't preallocate
 

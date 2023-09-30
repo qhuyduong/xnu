@@ -208,6 +208,7 @@
 #define CPUID_EXTFEATURE_EM64T     _Bit(29)     /* Extended Mem 64 Technology */
 
 #define CPUID_EXTFEATURE_LAHF      _HBit(0)     /* LAFH/SAHF instructions */
+#define CPUID_EXTFEATURE_SVM       _HBit(2)     /* Secure Virtual Machine */
 #define CPUID_EXTFEATURE_LZCNT     _HBit(5)     /* LZCNT instruction */
 #define CPUID_EXTFEATURE_PREFETCHW _HBit(8)     /* PREFETCHW instruction */
 
